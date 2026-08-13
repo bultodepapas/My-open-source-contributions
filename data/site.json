@@ -1,0 +1,22 @@
+{
+  "owner": {
+    "name": "Giuseppe Rojas",
+    "username": "bultodepapas",
+    "location": "Bogotá, Colombia",
+    "githubUrl": "https://github.com/bultodepapas"
+  },
+  "repository": {
+    "name": "My-open-source-contributions",
+    "url": "https://github.com/bultodepapas/My-open-source-contributions",
+    "pagesUrl": "https://bultodepapas.github.io/My-open-source-contributions/"
+  },
+  "hero": {
+    "eyebrow": "Giuseppe Rojas / Public contribution ledger",
+    "statement": "Six months of ChatGPT Pro, paid forward through open source.",
+    "copy": "A transparent record of every pull request, independent build, follow-up, and result."
+  },
+  "gratitude": {
+    "copy": "OpenAI gave me six months of ChatGPT Pro. This independent index is my way of saying thank you: build useful things, contribute upstream, and keep the evidence public.",
+    "disclaimer": "Personal project. Not affiliated with or endorsed by OpenAI."
+  }
+}

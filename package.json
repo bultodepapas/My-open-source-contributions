@@ -1,0 +1,16 @@
+{
+  "name": "open-work-index",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A public, verifiable record of open-source contributions and independent projects.",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "sync": "node scripts/sync-github.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

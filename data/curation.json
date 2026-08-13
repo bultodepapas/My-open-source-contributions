@@ -1,0 +1,44 @@
+{
+  "contributions": {
+    "debpalash/VoiceStudio#1525": {
+      "featured": true,
+      "summary": "Closed server-mode paths that could bypass admin protections."
+    },
+    "EdgeTX/edgetx#7613": {
+      "featured": true,
+      "summary": "Made simulator numeric parsing deterministic across host locales."
+    },
+    "EdgeTX/lua-scripts#64": {
+      "featured": true,
+      "summary": "Added a Recovery QR widget for sharing a model's last-known GPS position."
+    },
+    "debpalash/VoiceStudio#1162": {
+      "featured": true,
+      "summary": "Prevented audio-duration probing from waiting forever on an unresolved promise."
+    }
+  },
+  "projects": {
+    "bultodepapas/DremHouse": {
+      "featured": true,
+      "summary": "A living architecture, engineering, cost, and execution record for a warehouse home in Boyacá."
+    },
+    "bultodepapas/salmandra": {
+      "featured": true,
+      "summary": "An open, 3D-printed FPV aircraft platform where each design decision carries its rationale and confidence."
+    },
+    "bultodepapas/edgetx-recovery-qr": {
+      "featured": true,
+      "summary": "An EdgeTX widget that preserves a model's last-known GPS location and turns it into a native QR code."
+    },
+    "bultodepapas/Dupli-Annihilator-G": {
+      "featured": true,
+      "summary": "A focused desktop utility for merging text files and removing duplicate lines."
+    },
+    "bultodepapas/Dog-RGB": {
+      "summary": "A C++ RGB project. Documentation is in progress."
+    },
+    "bultodepapas/My-open-source-contributions": {
+      "hidden": true
+    }
+  }
+}
