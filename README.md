@@ -60,7 +60,13 @@ overwrites human curation.
 | <code>data/curation.json</code> | Human summaries, featured work, visibility |
 | <code>data/generated/github.json</code> | Machine-owned public GitHub facts |
 | <code>scripts/sync-github.mjs</code> | Dependency-free GitHub sync |
+| <code>scripts/lib/http.mjs</code> | Retrying, rate-limit-aware GitHub client |
+| <code>scripts/lib/normalize.mjs</code> | Pure rules that shape the public record |
+| <code>scripts/lib/snapshot.mjs</code> | Snapshot assembly, safety guards, atomic write |
 | <code>scripts/validate.mjs</code> | Public-data and page-contract checks |
+| <code>scripts/stage-site.mjs</code> | Copies only the publishable site into <code>_site</code> |
+| <code>scripts/check-site.mjs</code> | Fails if the page references a file that is not published |
+| <code>tests/</code> | Unit tests for the sync rules, contract tests for the snapshot |
 | <code>.github/workflows</code> | Validation, weekly sync, and Pages deploy |
 
 ## Local preview
@@ -76,6 +82,13 @@ npm run validate
 npm run serve
 ~~~
 
+To inspect exactly what the deploy would publish:
+
+~~~powershell
+npm run stage
+npm run check:site -- _site
+~~~
+
 Then open <http://localhost:8000>. A local web server is required because the
 browser loads the JSON files with <code>fetch</code>.
 
@@ -85,12 +98,21 @@ The scheduled workflow runs every Monday at 13:17 UTC (08:17 in Bogotá). It:
 
 1. searches GitHub for public pull requests authored by
    <code>@bultodepapas</code>;
-2. refreshes pull-request and owned-repository facts;
+2. refreshes only the pull requests GitHub reports as changed;
 3. validates the result;
 4. commits only when meaningful public metadata changed;
 5. deploys the same snapshot to GitHub Pages.
 
 It can also be run manually from the Actions tab.
+
+Sync and deploy are separate jobs. A failed sync never blocks publishing: the
+site keeps serving the last snapshot that was committed, and a failure issue is
+opened so the problem does not pass unnoticed. To preview a sync without
+writing anything:
+
+~~~powershell
+npm run sync -- --dry-run
+~~~
 
 To refresh locally, use a GitHub token for a higher API rate limit:
 

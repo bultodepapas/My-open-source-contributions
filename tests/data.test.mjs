@@ -1,6 +1,14 @@
+// Contract tests for the published snapshot.
+//
+// These assert invariants that must hold for *any* snapshot. Rules about how a
+// particular pull request is shaped belong in normalize.test.mjs, against
+// fixtures: asserting them here made an ordinary upstream merge break the build.
+
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+
+import { CONTRIBUTION_FIELDS } from "../scripts/lib/normalize.mjs";
 
 const github = JSON.parse(
   await readFile(new URL("../data/generated/github.json", import.meta.url), "utf8")
@@ -38,11 +46,48 @@ test("only public GitHub URLs are published", function () {
   });
 });
 
-test("draft is an open-state modifier, not a replacement for closed status", function () {
-  const closedDraft = github.contributions.find(function findClosedDraft(item) {
-    return item.draft && item.status === "closed";
+test("every contribution carries the full published shape", function () {
+  github.contributions.forEach(function contribution(item) {
+    assert.deepEqual(
+      Object.keys(item),
+      CONTRIBUTION_FIELDS,
+      "Unexpected shape on " + item.id
+    );
   });
+});
 
-  assert.ok(closedDraft, "The current snapshot should keep the closed draft fixture");
-  assert.equal(closedDraft.status, "closed");
+test("status, draft, and timestamps stay internally consistent", function () {
+  github.contributions.forEach(function contribution(item) {
+    assert.ok(
+      ["open", "merged", "closed"].includes(item.status),
+      "Invalid status on " + item.id + ": " + item.status
+    );
+    assert.equal(typeof item.draft, "boolean", "draft must be a boolean on " + item.id);
+
+    if (item.mergedAt) {
+      assert.equal(item.status, "merged", item.id + " has a merge date but is not merged");
+    }
+
+    if (item.status === "open") {
+      assert.equal(item.mergedAt, null, item.id + " is open but has a merge date");
+    } else {
+      assert.ok(item.closedAt, item.id + " is not open but has no closing date");
+    }
+  });
+});
+
+// A degraded sync publishes null counters rather than a wrong number. The site
+// renders those as "—", so null is a supported value, but a string never is.
+test("diff counters are numbers or explicitly unknown", function () {
+  github.contributions.forEach(function contribution(item) {
+    ["additions", "deletions", "changedFiles", "reviewComments"].forEach(
+      function counter(field) {
+        const value = item[field];
+        assert.ok(
+          value === null || typeof value === "number",
+          item.id + " has a non-numeric " + field + ": " + value
+        );
+      }
+    );
+  });
 });

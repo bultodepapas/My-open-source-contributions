@@ -7,3 +7,9 @@ Thumbs.db
 node_modules/
 output/
 .playwright-cli/
+
+# Transient snapshot writes
+data/generated/*.tmp
+
+# Staged site for deployment
+_site/

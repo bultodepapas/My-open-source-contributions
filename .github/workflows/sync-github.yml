@@ -1,3 +1,10 @@
+# Refreshes public GitHub facts, then publishes.
+#
+# Sync and deploy are separate jobs on purpose. Upstream GitHub is allowed to
+# have a bad minute; the site is not allowed to stop publishing because of it.
+# If the sync job fails, the deploy job still ships the last snapshot that was
+# committed, and a failure issue is opened so the problem stays visible.
+
 name: Sync GitHub activity
 
 on:
@@ -6,25 +13,23 @@ on:
     - cron: "17 13 * * 1"
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  sync-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 24
           package-manager-cache: false
@@ -48,12 +53,76 @@ jobs:
             git commit -m "chore(data): sync public GitHub activity"
             git push
           fi
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
-      - name: Upload the static site
-        uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: sync
+    if: always()
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      # Checks out the branch head rather than the run's SHA, so a successful
+      # sync's commit is included and a failed one falls back to what is there.
+      - name: Check out the published branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          path: .
+          ref: ${{ github.ref_name }}
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Stage the publishable site
+        run: npm run stage
+      - name: Check that every referenced file is published
+        run: npm run check:site -- _site
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+      - name: Upload the static site
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: _site
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
+
+  report-failure:
+    needs: [sync, deploy]
+    if: always() && (needs.sync.result == 'failure' || needs.deploy.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the failure issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SYNC_RESULT: ${{ needs.sync.result }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+        run: |
+          title="Scheduled GitHub sync needs attention"
+          body="$(printf '%s\n' \
+            "The \`Sync GitHub activity\` workflow did not complete cleanly." \
+            "" \
+            "- Sync job: \`${SYNC_RESULT}\`" \
+            "- Deploy job: \`${DEPLOY_RESULT}\`" \
+            "- Run: ${RUN_URL}" \
+            "" \
+            "The published snapshot is only replaced when a sync succeeds, so the site is still serving the last good record.")"
+
+          existing="$(gh issue list -R "$REPO" --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" -R "$REPO" --body "$body"
+          else
+            gh issue create -R "$REPO" --title "$title" --body "$body"
+          fi

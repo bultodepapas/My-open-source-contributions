@@ -8,6 +8,8 @@
     "serve": "node scripts/serve.mjs",
     "sync": "node scripts/sync-github.mjs",
     "validate": "node scripts/validate.mjs",
+    "stage": "node scripts/stage-site.mjs",
+    "check:site": "node scripts/check-site.mjs",
     "test": "node --test"
   },
   "engines": {
