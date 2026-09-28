@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-21T18:41:09.746Z",
+  "generatedAt": "2026-09-28T20:06:53.408Z",
   "source": {
     "provider": "GitHub",
     "username": "bultodepapas",
@@ -14,7 +14,7 @@
     "url": "https://github.com/bultodepapas",
     "avatarUrl": "https://avatars.githubusercontent.com/u/13193085?v=4",
     "publicRepositories": 22,
-    "followers": 16,
+    "followers": 17,
     "createdAt": "2015-07-06T02:59:17Z"
   },
   "contributions": [
@@ -119,10 +119,10 @@
       "draft": false,
       "url": "https://github.com/EdgeTX/edgetx/pull/7647",
       "createdAt": "2026-08-13T17:52:54Z",
-      "updatedAt": "2026-09-01T02:50:32Z",
+      "updatedAt": "2026-09-25T04:18:01Z",
       "closedAt": null,
       "mergedAt": null,
-      "additions": 55,
+      "additions": 75,
       "deletions": 0,
       "changedFiles": 2,
       "comments": 4,
@@ -571,10 +571,28 @@
       "archived": false,
       "stars": 1,
       "forks": 0,
-      "openIssues": 8,
+      "openIssues": 9,
       "createdAt": "2026-07-28T02:20:32Z",
       "updatedAt": "2026-08-21T19:33:41Z",
-      "pushedAt": "2026-09-21T09:34:09Z"
+      "pushedAt": "2026-09-28T09:36:06Z"
+    },
+    {
+      "id": "bultodepapas/edgetx-GR",
+      "name": "edgetx-GR",
+      "fullName": "bultodepapas/edgetx-GR",
+      "url": "https://github.com/bultodepapas/edgetx-GR",
+      "homepage": "https://edgetx.org",
+      "description": "EdgeTX is the cutting edge open source firmware for your R/C radio",
+      "language": "C",
+      "topics": [],
+      "fork": true,
+      "archived": false,
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "createdAt": "2026-07-23T01:40:23Z",
+      "updatedAt": "2026-08-11T17:15:47Z",
+      "pushedAt": "2026-09-25T04:18:00Z"
     },
     {
       "id": "bultodepapas/My-open-source-contributions",
@@ -598,8 +616,8 @@
       "forks": 0,
       "openIssues": 0,
       "createdAt": "2026-08-13T13:29:52Z",
-      "updatedAt": "2026-09-14T18:37:59Z",
-      "pushedAt": "2026-09-14T18:37:55Z"
+      "updatedAt": "2026-09-21T18:41:15Z",
+      "pushedAt": "2026-09-21T18:41:11Z"
     },
     {
       "id": "bultodepapas/Dog-RGB",
@@ -636,24 +654,6 @@
       "createdAt": "2026-06-27T22:22:30Z",
       "updatedAt": "2026-09-09T03:43:41Z",
       "pushedAt": "2026-09-09T03:50:49Z"
-    },
-    {
-      "id": "bultodepapas/edgetx-GR",
-      "name": "edgetx-GR",
-      "fullName": "bultodepapas/edgetx-GR",
-      "url": "https://github.com/bultodepapas/edgetx-GR",
-      "homepage": "https://edgetx.org",
-      "description": "EdgeTX is the cutting edge open source firmware for your R/C radio",
-      "language": "C",
-      "topics": [],
-      "fork": true,
-      "archived": false,
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
-      "createdAt": "2026-07-23T01:40:23Z",
-      "updatedAt": "2026-08-11T17:15:47Z",
-      "pushedAt": "2026-09-01T16:25:11Z"
     },
     {
       "id": "bultodepapas/edgetx-sdcard",
