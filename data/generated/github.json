@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T21:16:11.739Z",
+  "generatedAt": "2026-10-12T21:43:48.185Z",
   "source": {
     "provider": "GitHub",
     "username": "bultodepapas",
@@ -553,18 +553,52 @@
       "name": "OpenRCsimulator",
       "fullName": "bultodepapas/OpenRCsimulator",
       "url": "https://github.com/bultodepapas/OpenRCsimulator",
-      "homepage": null,
-      "description": null,
+      "homepage": "https://github.com/bultodepapas/OpenRCsimulator/releases",
+      "description": "Open-source RC airplane simulator built with Godot. USB radio, gamepad or keyboard controls, 240 Hz flight physics, and reproducible scenery.",
       "language": "GDScript",
-      "topics": [],
+      "topics": [
+        "aerodynamics",
+        "flight-simulator",
+        "gdscript",
+        "godot",
+        "open-source",
+        "radio-control",
+        "rc-simulator",
+        "simulation"
+      ],
       "fork": false,
       "archived": false,
       "stars": 1,
       "forks": 0,
       "openIssues": 0,
       "createdAt": "2026-10-05T13:18:49Z",
-      "updatedAt": "2026-10-05T20:35:44Z",
-      "pushedAt": "2026-10-05T20:30:25Z"
+      "updatedAt": "2026-10-12T20:19:00Z",
+      "pushedAt": "2026-10-12T20:18:55Z"
+    },
+    {
+      "id": "bultodepapas/My-open-source-contributions",
+      "name": "My-open-source-contributions",
+      "fullName": "bultodepapas/My-open-source-contributions",
+      "url": "https://github.com/bultodepapas/My-open-source-contributions",
+      "homepage": "https://bultodepapas.github.io/My-open-source-contributions/",
+      "description": "A living record of my pull requests, open-source contributions, and personal projects — built in gratitude for OpenAI.",
+      "language": "JavaScript",
+      "topics": [
+        "contributions",
+        "developer-portfolio",
+        "github-pages",
+        "open-source",
+        "portfolio",
+        "pull-requests"
+      ],
+      "fork": false,
+      "archived": false,
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "createdAt": "2026-08-13T13:29:52Z",
+      "updatedAt": "2026-10-05T21:16:17Z",
+      "pushedAt": "2026-10-05T21:16:13Z"
     },
     {
       "id": "bultodepapas/salamandra",
@@ -673,31 +707,6 @@
       "createdAt": "2026-07-29T18:57:00Z",
       "updatedAt": "2026-07-29T18:57:00Z",
       "pushedAt": "2026-09-30T03:30:41Z"
-    },
-    {
-      "id": "bultodepapas/My-open-source-contributions",
-      "name": "My-open-source-contributions",
-      "fullName": "bultodepapas/My-open-source-contributions",
-      "url": "https://github.com/bultodepapas/My-open-source-contributions",
-      "homepage": "https://bultodepapas.github.io/My-open-source-contributions/",
-      "description": "A living record of my pull requests, open-source contributions, and personal projects — built in gratitude for OpenAI.",
-      "language": "JavaScript",
-      "topics": [
-        "contributions",
-        "developer-portfolio",
-        "github-pages",
-        "open-source",
-        "portfolio",
-        "pull-requests"
-      ],
-      "fork": false,
-      "archived": false,
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
-      "createdAt": "2026-08-13T13:29:52Z",
-      "updatedAt": "2026-09-28T20:06:59Z",
-      "pushedAt": "2026-09-28T20:06:55Z"
     },
     {
       "id": "bultodepapas/Airboat-3dprinted",
