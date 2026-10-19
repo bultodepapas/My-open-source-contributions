@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-12T21:43:48.185Z",
+  "generatedAt": "2026-10-19T19:19:35.854Z",
   "source": {
     "provider": "GitHub",
     "username": "bultodepapas",
@@ -14,10 +14,32 @@
     "url": "https://github.com/bultodepapas",
     "avatarUrl": "https://avatars.githubusercontent.com/u/13193085?v=4",
     "publicRepositories": 23,
-    "followers": 20,
+    "followers": 21,
     "createdAt": "2015-07-06T02:59:17Z"
   },
   "contributions": [
+    {
+      "id": "bultodepapas/OpenRCsimulator#2",
+      "kind": "pull-request",
+      "role": "author",
+      "scope": "own",
+      "repository": "bultodepapas/OpenRCsimulator",
+      "number": 2,
+      "title": "Configure free CodeRabbit OSS reviews",
+      "type": "other",
+      "status": "open",
+      "draft": false,
+      "url": "https://github.com/bultodepapas/OpenRCsimulator/pull/2",
+      "createdAt": "2026-10-19T13:21:30Z",
+      "updatedAt": "2026-10-19T13:24:15Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "additions": 83,
+      "deletions": 0,
+      "changedFiles": 2,
+      "comments": 0,
+      "reviewComments": 0
+    },
     {
       "id": "EdgeTX/edgetx#7668",
       "kind": "pull-request",
@@ -553,7 +575,7 @@
       "name": "OpenRCsimulator",
       "fullName": "bultodepapas/OpenRCsimulator",
       "url": "https://github.com/bultodepapas/OpenRCsimulator",
-      "homepage": "https://github.com/bultodepapas/OpenRCsimulator/releases",
+      "homepage": "https://bultodepapas.github.io/OpenRCsimulator/",
       "description": "Open-source RC airplane simulator built with Godot. USB radio, gamepad or keyboard controls, 240 Hz flight physics, and reproducible scenery.",
       "language": "GDScript",
       "topics": [
@@ -568,37 +590,12 @@
       ],
       "fork": false,
       "archived": false,
-      "stars": 1,
-      "forks": 0,
-      "openIssues": 0,
+      "stars": 15,
+      "forks": 3,
+      "openIssues": 2,
       "createdAt": "2026-10-05T13:18:49Z",
-      "updatedAt": "2026-10-12T20:19:00Z",
-      "pushedAt": "2026-10-12T20:18:55Z"
-    },
-    {
-      "id": "bultodepapas/My-open-source-contributions",
-      "name": "My-open-source-contributions",
-      "fullName": "bultodepapas/My-open-source-contributions",
-      "url": "https://github.com/bultodepapas/My-open-source-contributions",
-      "homepage": "https://bultodepapas.github.io/My-open-source-contributions/",
-      "description": "A living record of my pull requests, open-source contributions, and personal projects — built in gratitude for OpenAI.",
-      "language": "JavaScript",
-      "topics": [
-        "contributions",
-        "developer-portfolio",
-        "github-pages",
-        "open-source",
-        "portfolio",
-        "pull-requests"
-      ],
-      "fork": false,
-      "archived": false,
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
-      "createdAt": "2026-08-13T13:29:52Z",
-      "updatedAt": "2026-10-05T21:16:17Z",
-      "pushedAt": "2026-10-05T21:16:13Z"
+      "updatedAt": "2026-10-19T18:47:53Z",
+      "pushedAt": "2026-10-19T18:47:49Z"
     },
     {
       "id": "bultodepapas/salamandra",
@@ -626,7 +623,32 @@
       "openIssues": 9,
       "createdAt": "2026-07-28T02:20:32Z",
       "updatedAt": "2026-08-21T19:33:41Z",
-      "pushedAt": "2026-10-05T09:38:08Z"
+      "pushedAt": "2026-10-19T09:43:52Z"
+    },
+    {
+      "id": "bultodepapas/My-open-source-contributions",
+      "name": "My-open-source-contributions",
+      "fullName": "bultodepapas/My-open-source-contributions",
+      "url": "https://github.com/bultodepapas/My-open-source-contributions",
+      "homepage": "https://bultodepapas.github.io/My-open-source-contributions/",
+      "description": "A living record of my pull requests, open-source contributions, and personal projects — built in gratitude for OpenAI.",
+      "language": "JavaScript",
+      "topics": [
+        "contributions",
+        "developer-portfolio",
+        "github-pages",
+        "open-source",
+        "portfolio",
+        "pull-requests"
+      ],
+      "fork": false,
+      "archived": false,
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "createdAt": "2026-08-13T13:29:52Z",
+      "updatedAt": "2026-10-12T21:43:54Z",
+      "pushedAt": "2026-10-12T21:43:49Z"
     },
     {
       "id": "bultodepapas/Dog-RGB",
