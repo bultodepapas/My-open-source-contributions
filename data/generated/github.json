@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T19:19:35.854Z",
+  "generatedAt": "2026-10-26T19:17:49.152Z",
   "source": {
     "provider": "GitHub",
     "username": "bultodepapas",
@@ -19,6 +19,50 @@
   },
   "contributions": [
     {
+      "id": "bultodepapas/OpenRCsimulator#7",
+      "kind": "pull-request",
+      "role": "author",
+      "scope": "own",
+      "repository": "bultodepapas/OpenRCsimulator",
+      "number": 7,
+      "title": "Integrate PR #1 surface controls and retain experimental flight research",
+      "type": "other",
+      "status": "merged",
+      "draft": false,
+      "url": "https://github.com/bultodepapas/OpenRCsimulator/pull/7",
+      "createdAt": "2026-10-26T13:06:23Z",
+      "updatedAt": "2026-10-26T13:12:26Z",
+      "closedAt": "2026-10-26T13:09:29Z",
+      "mergedAt": "2026-10-26T13:09:29Z",
+      "additions": 5710,
+      "deletions": 41,
+      "changedFiles": 36,
+      "comments": 1,
+      "reviewComments": 0
+    },
+    {
+      "id": "bultodepapas/OpenRCsimulator#6",
+      "kind": "pull-request",
+      "role": "author",
+      "scope": "own",
+      "repository": "bultodepapas/OpenRCsimulator",
+      "number": 6,
+      "title": "fix(ui): clear stale name errors when switching controller profiles",
+      "type": "fix",
+      "status": "merged",
+      "draft": false,
+      "url": "https://github.com/bultodepapas/OpenRCsimulator/pull/6",
+      "createdAt": "2026-10-26T12:17:54Z",
+      "updatedAt": "2026-10-26T12:22:22Z",
+      "closedAt": "2026-10-26T12:19:49Z",
+      "mergedAt": "2026-10-26T12:19:49Z",
+      "additions": 35,
+      "deletions": 0,
+      "changedFiles": 2,
+      "comments": 1,
+      "reviewComments": 0
+    },
+    {
       "id": "bultodepapas/OpenRCsimulator#2",
       "kind": "pull-request",
       "role": "author",
@@ -27,18 +71,18 @@
       "number": 2,
       "title": "Configure free CodeRabbit OSS reviews",
       "type": "other",
-      "status": "open",
+      "status": "merged",
       "draft": false,
       "url": "https://github.com/bultodepapas/OpenRCsimulator/pull/2",
       "createdAt": "2026-10-19T13:21:30Z",
-      "updatedAt": "2026-10-19T13:24:15Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "additions": 83,
+      "updatedAt": "2026-10-20T03:00:36Z",
+      "closedAt": "2026-10-20T02:58:25Z",
+      "mergedAt": "2026-10-20T02:58:25Z",
+      "additions": 90,
       "deletions": 0,
       "changedFiles": 2,
-      "comments": 0,
-      "reviewComments": 0
+      "comments": 1,
+      "reviewComments": 1
     },
     {
       "id": "EdgeTX/edgetx#7668",
@@ -590,12 +634,12 @@
       ],
       "fork": false,
       "archived": false,
-      "stars": 15,
-      "forks": 3,
-      "openIssues": 2,
+      "stars": 20,
+      "forks": 4,
+      "openIssues": 0,
       "createdAt": "2026-10-05T13:18:49Z",
-      "updatedAt": "2026-10-19T18:47:53Z",
-      "pushedAt": "2026-10-19T18:47:49Z"
+      "updatedAt": "2026-10-26T17:14:26Z",
+      "pushedAt": "2026-10-26T17:14:22Z"
     },
     {
       "id": "bultodepapas/salamandra",
@@ -620,10 +664,10 @@
       "archived": false,
       "stars": 1,
       "forks": 0,
-      "openIssues": 9,
+      "openIssues": 10,
       "createdAt": "2026-07-28T02:20:32Z",
       "updatedAt": "2026-08-21T19:33:41Z",
-      "pushedAt": "2026-10-19T09:43:52Z"
+      "pushedAt": "2026-10-26T09:50:40Z"
     },
     {
       "id": "bultodepapas/My-open-source-contributions",
@@ -647,8 +691,8 @@
       "forks": 0,
       "openIssues": 0,
       "createdAt": "2026-08-13T13:29:52Z",
-      "updatedAt": "2026-10-12T21:43:54Z",
-      "pushedAt": "2026-10-12T21:43:49Z"
+      "updatedAt": "2026-10-19T19:19:42Z",
+      "pushedAt": "2026-10-19T19:19:38Z"
     },
     {
       "id": "bultodepapas/Dog-RGB",
